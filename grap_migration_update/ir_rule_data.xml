@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="0">
+<!--Company-->
+		<record id="base.res_company_rule" model="ir.rule">
+			<field name="domain_force"></field>
+		</record>
+
+<!--Fiscal-->
+		<record id="account.account_move_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.id),('company_id','in',[c.id for c in user.company_id.fiscal_childs]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.account_move_line_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.id),('company_id','in',[c.id for c in user.company_id.fiscal_childs]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.account_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.tax_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.tax_code_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.period_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.fiscal_year_comp_rule" model="ir.rule">
+			<field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.fiscal_company.id])]</field>
+		</record>
+		<record id="account.journal_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+		<record id="account.journal_period_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.fiscal_company.id),('company_id','in',[c.id for c in user.company_ids]),('company_id','=',False)]</field>
+		</record>
+
+<!--Autres-->
+		<record id="stock.stock_location_comp_rule" model="ir.rule">
+			<field name="domain_force">['|',('company_id','=',False),('company_id','child_of',user.company_id.id)]</field>
+		</record>
+		<record id="product.product_comp_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.id),('company_id','in',[c.id for c in user.company_id.fiscal_childs]),('company_id','=',False)]</field>
+		</record>
+		<record id="base.res_partner_rule" model="ir.rule">
+			<field name="domain_force">['|','|',('company_id','=',user.company_id.id),('company_id','in',[c.id for c in user.company_id.fiscal_childs]),('company_id','=',False)]</field>
+		</record>
+		<record id="pos_order_rule" model="ir.rule">
+			<field name="name" >POS Order Multi Company</field>
+			<field name="domain_force">['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+			<field model="ir.model" name="model_id" search="[('model', '=', u'pos.order')]"/>
+		</record>
+		<record id="product.product_pricelist_comp_rule" model="ir.rule">
+			<field name="domain_force">['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+		</record>
+		<record id="product.product_pricelist_version_comp_rule" model="ir.rule">
+			<field name="domain_force">['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+		</record>
+		<record id="product.product_pricelist_item_comp_rule" model="ir.rule">
+			<field name="domain_force">['|',('company_id','=',user.company_id.id),('company_id','=',False)]</field>
+		</record>
+	</data>
+</openerp>

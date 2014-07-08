@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="0">
+		<record id="sale.shop" model="sale.shop">
+			<field name="name">Magasin 3PP</field>
+			<field name="warehouse_id" model="stock.warehouse" ref="stock.warehouse0"/>
+			<field model="account.payment.term" name="payment_default_id" search="[('name', '=', u'Comptant')]"/>
+			<field model="product.pricelist" name="pricelist_id" ref="product.list0"/>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+		</record>
+    </data>
+</openerp>

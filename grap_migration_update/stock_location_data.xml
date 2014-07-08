@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data noupdate="0">
+<!--updating 3PP-->
+		<record id="stock.stock_location_company" model="stock.location">
+			<field name="name">Emplacements Physiques 3pp</field>
+			<field name="usage">view</field>
+			<field model="stock.location" name="location_id" ref="grap_config2.location_physical_grap"/>
+			<field name="company_id" ref="grap_config.company_grap_act"/>
+		</record>
+		<record id="stock.stock_location_customers" model="stock.location">
+			<field name="name">Clients 3PP</field>
+			<field name="location_id" ref="grap_config2.location_customers_grap"/>
+		</record>
+		<record id="stock.stock_location_suppliers" model="stock.location">
+			<field name="name">Fournisseurs 3PP</field>
+			<field name="location_id" ref="grap_config2.location_suppliers_grap"/>
+		</record>
+		<record id="stock.location_production" model="stock.location">
+			<field name="name">Production 3PP</field>
+			<field name="location_id" ref="grap_config2.location_production_grap"/>
+		</record>
+		<record id="stock.location_inventory" model="stock.location">
+			<field name="name">Pertes d'Inventaire 3PP</field>
+			<field name="location_id" ref="grap_config2.location_inventory_grap"/>
+		</record>
+		<record id="stock.stock_location_locations" model="stock.location">
+			<field model="res.company" name="company_id" search="[('name', '=', u'Groupe')]"/>
+		</record>
+		<record id="stock.stock_location_locations_partner" model="stock.location">
+			<field model="res.company" name="company_id" search="[('name', '=', u'Groupe')]"/>
+		</record>
+		<record id="stock.stock_location_locations_virtual" model="stock.location">
+			<field model="res.company" name="company_id" search="[('name', '=', u'Groupe')]"/>
+		</record>
+		<record id="stock.location_procurement" model="stock.location">
+			<field model="res.company" name="company_id" search="[('name', '=', u'Groupe')]"/>
+			<field name="usage">view</field>
+		</record>
+	</data>
+</openerp>

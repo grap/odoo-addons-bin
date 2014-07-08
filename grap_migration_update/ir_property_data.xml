@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<openerp>
+<!--__________________________________GRAP activité__________________________________________-->
+	<data noupdate="0">
+		<record id="stock.property_stock_account_output_prd" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="account.account" name="value_reference" use="grap_value_reference" search="[('code','=','603100000')]"/>
+		</record>
+		<record id="stock.property_stock_account_input_prd" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="account.account" name="value_reference" use="grap_value_reference" search="[('code','=','603100000')]"/>
+		</record>
+		<record id="stock.property_stock_account_output_categ" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="account.account" name="value_reference" use="grap_value_reference" search="[('code','=','603100000')]"/>
+		</record>
+		<record id="stock.property_stock_account_input_categ" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="account.account" name="value_reference" use="grap_value_reference" search="[('code','=','603100000')]"/>
+		</record>
+		<record id="stock.property_stock_supplier" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_suppliers_grap_act"/>
+		</record>
+		<record id="stock.property_stock_customer" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_customers_grap_act"/>
+		</record>
+		<record id="stock.property_stock_procurement" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_procurement_grap_act"/>
+		</record>
+		<record id="stock.property_stock_inventory" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_inventory_grap_act"/>
+		</record>11
+		<record id="stock.property_stock_production" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_production_grap_act"/>
+		</record>
+		<record id="stock.property_stock_journal" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="account.journal" name="value_reference" use="grap_value_reference" ref="grap_config2.journal_GRAP_stock"/>
+		</record>
+
+
+		<record id="property_stock_valuation_account_id_grap_act" model="ir.property">
+			<field name="name">property_stock_valuation_account_id</field>
+			<field model="res.company" name="company_id" ref="grap_config.company_grap_act"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Valuation Account')]"/>
+			<field name="type">many2one</field>
+			<field model="account.account" name="value_reference" use="grap_value_reference" search="[('code','=','371000000')]"/>
+		</record>
+	</data>
+
+<!--__________________________________3PP__________________________________________-->
+	<data noupdate="0">
+		<record id="property_account_receivable_3pp" model="ir.property">
+			<field name="name">property_account_receivable</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Account Receivable')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,389</field>
+		</record>
+		<record id="property_account_payable_3pp" model="ir.property">
+			<field name="name">property_account_payable</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Account Payable')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,368</field>
+		</record>
+		<record id="property_account_expense_categ_3pp" model="ir.property">
+			<field name="name">property_account_expense_categ</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Expense Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,618</field>
+		</record>
+		<record id="property_account_income_categ_3pp" model="ir.property">
+			<field name="name">property_account_income_categ</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Income Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,856</field>
+		</record>
+		<record id="property_stock_account_output_3pp" model="ir.property">
+			<field name="name">property_stock_account_output</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Output Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,607</field>
+		</record>
+		<record id="property_stock_account_input_3pp" model="ir.property">
+			<field name="name">property_stock_account_input</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Input Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,607</field>
+		</record>
+		<record id="property_stock_account_output_categ_3pp" model="ir.property">
+			<field name="name">property_stock_account_output_categ</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Output Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,607</field>
+		</record>
+		<record id="property_stock_account_input_categ_3pp" model="ir.property">
+			<field name="name">property_stock_account_categ_input</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Input Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,607</field>
+		</record>
+		<record id="property_stock_valuation_account_id_3pp" model="ir.property">
+			<field name="name">property_stock_valuation_account_id</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock Valuation Account')]"/>
+			<field name="type">many2one</field>
+			<field name="value_reference">account.account,340</field>
+		</record>
+		<record id="stock.property_stock_supplier_3pp" model="ir.property">
+			<field name="name">property_stock_supplier</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Supplier Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="stock.stock_location_suppliers"/>
+		</record>
+		<record id="stock.property_stock_customers_3pp" model="ir.property">
+			<field name="name">property_stock_customer</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Customer Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="stock.stock_location_customers"/>
+		</record>
+		<record id="stock.property_stock_customers_ress_3pp" model="ir.property">
+			<field name="name">property_stock_customer</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Customer Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="stock.stock_location_stock"/>
+			<field model="res.partner" name="res_id" use="grap_value_reference" ref="base.main_partner"/>
+		</record>
+		<record id="stock.property_stock_procurement_3pp" model="ir.property">
+			<field name="name">property_stock_procurement</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Procurement Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="grap_config2.location_procurement_3pp"/>
+		</record>
+		<record id="stock.property_stock_inventory_3pp" model="ir.property">
+			<field name="name">property_stock_inventory</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Inventory Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="stock.location_inventory"/>
+		</record>
+		<record id="stock.property_stock_production_3pp" model="ir.property">
+			<field name="name">property_stock_production</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Production Location')]"/>
+			<field name="type">many2one</field>
+			<field model="stock.location" name="value_reference" use="grap_value_reference" ref="stock.location_production"/>
+		</record>
+		<record id="stock.property_stock_journal_3pp" model="ir.property">
+			<field name="name">property_stock_journal</field>
+			<field model="res.company" name="company_id" search="[('name', '=', u'3 ptits pois')]"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Stock journal')]"/>
+			<field name="type">many2one</field>
+			<field model="account.journal" name="value_reference" use="grap_value_reference" ref="grap_config2.journal_GRAP_stock"/>
+		</record>
+		<record id="property_sale_pricelist_3pp" model="ir.property">
+			<field name="name">property_product_pricelist</field>
+			<field model="res.company" name="company_id" ref="base.main_company"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Sale Pricelist')]"/>
+			<field name="type">many2one</field>
+			<field model="product.pricelist" name="value_reference" use="grap_value_reference" ref="product.list0"/>
+		</record>
+		<record id="property_purchase_pricelist_3pp" model="ir.property">
+			<field name="name">property_product_pricelist_purchase</field>
+			<field model="res.company" name="company_id" ref="base.main_company"/>
+			<field model="ir.model.fields" name="fields_id" search="[('field_description', '=', u'Purchase Pricelist')]"/>
+			<field name="type">many2one</field>
+			<field model="product.pricelist" name="value_reference" use="grap_value_reference" ref="purchase.list0"/>
+		</record>
+	</data>
+
+<!--Modification de propriétés qui font chier-->
+	<data noupdate="0">
+		<record id="product.property_product_pricelist" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap"/>
+		</record>
+		<record id="purchase.property_product_pricelist_purchase" model="ir.property">
+			<field model="res.company" name="company_id" ref="grap_config.company_grap"/>
+		</record>
+	</data>
+
+</openerp>
