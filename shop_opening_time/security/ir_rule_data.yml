@@ -1,0 +1,17 @@
+- 
+  Creating a ir.rule record
+- 
+  !record {model: ir.rule, id: ir_rule_shop_opening_time_access}:
+    name: u'Access to shop opening time'
+    model_id: shop_opening_time.model_shop_opening_time
+    domain_force: "[('company_id','child_of',[user.company_id.id])]"
+
+- 
+  Creating a ir.rule record
+- 
+  !record {model: ir.rule, id: ir_rule_shop_opening_time_line_access}:
+    name: u'Access to shop opening time line'
+    model_id: shop_opening_time.model_shop_opening_time_line
+    domain_force: "[('company_id','child_of',[user.company_id.id])]"
+
+

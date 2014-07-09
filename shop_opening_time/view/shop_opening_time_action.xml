@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="action_view_shop_opening_time" model="ir.actions.act_window">
+            <field name="name">Opening times of shops</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shop.opening.time</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree,calendar</field>
+            <field name="view_id" ref="view_shop_opening_time_tree"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add opening times to your shops.
+              </p>
+            </field>
+        </record>
+    </data>
+</openerp>

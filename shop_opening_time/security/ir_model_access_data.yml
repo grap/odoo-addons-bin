@@ -1,0 +1,39 @@
+- 
+  Creating a ir.model.access record
+- 
+  !record {model: ir.model.access, id: ir_model_access_shopopeningtimesalesman0}:
+    group_id: base.group_sale_salesman
+    model_id: shop_opening_time.model_shop_opening_time
+    name: shop.opening.time salesman
+    perm_read: true
+
+- 
+  Creating a ir.model.access record
+- 
+  !record {model: ir.model.access, id: ir_model_access_shopopeningtimelinesalesman0}:
+    group_id: base.group_sale_salesman
+    model_id: shop_opening_time.model_shop_opening_time_line
+    name: shop.opening.time.line salesman
+    perm_read: true
+
+- 
+  Creating a ir.model.access record
+- 
+  !record {model: ir.model.access, id: ir_model_access_shopopeningtimemanager0}:
+    group_id: base.group_sale_manager
+    model_id: shop_opening_time.model_shop_opening_time
+    name: shop.opening.time manager
+    perm_create: true
+    perm_read: true
+    perm_write: true
+
+- 
+  Creating a ir.model.access record
+- 
+  !record {model: ir.model.access, id: ir_model_access_shopopeningtimelinemanager0}:
+    group_id: base.group_sale_manager
+    model_id: shop_opening_time.model_shop_opening_time_line
+    name: shop.opening.time.line manager
+    perm_create: true
+    perm_read: true
+    perm_write: true
